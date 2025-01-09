@@ -8,10 +8,10 @@
 
   "dependencies":   [],
 
-  "include":        "angelscript.h",
+  "include":        "angelscript-module.h",
 
-  "compile":        [ { "file": "angelscript.cpp", "target": "! xcode" },
-                      { "file": "angelscript.mm",  "target": "xcode" } ],
+  "compile":        [ { "file": "angelscript-module.cpp", "target": "! xcode" },
+                      { "file": "angelscript-module.mm",  "target": "xcode" } ],
 
   "browse":         [],
 

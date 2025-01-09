@@ -28,69 +28,99 @@
  andreas@angelcode.com
 */
 
-#include "sdk/angelscript/source/as_atomic.cpp"
-#include "sdk/angelscript/source/as_builder.cpp"
-#include "sdk/angelscript/source/as_bytecode.cpp"
-#include "sdk/angelscript/source/as_callfunc_arm.cpp"
-#include "sdk/angelscript/source/as_callfunc_mips.cpp"
-#include "sdk/angelscript/source/as_callfunc_ppc_64.cpp"
-#include "sdk/angelscript/source/as_callfunc_ppc.cpp"
-#include "sdk/angelscript/source/as_callfunc_sh4.cpp"
-#include "sdk/angelscript/source/as_callfunc_x64_gcc.cpp"
-#include "sdk/angelscript/source/as_callfunc_x64_mingw.cpp"
-#include "sdk/angelscript/source/as_callfunc_x64_msvc.cpp"
-#include "sdk/angelscript/source/as_callfunc_x86.cpp"
-#include "sdk/angelscript/source/as_callfunc_xenon.cpp"
-#include "sdk/angelscript/source/as_callfunc.cpp"
-#include "sdk/angelscript/source/as_compiler.cpp"
-#include "sdk/angelscript/source/as_configgroup.cpp"
-#include "sdk/angelscript/source/as_context.cpp"
-#include "sdk/angelscript/source/as_datatype.cpp"
-#include "sdk/angelscript/source/as_gc.cpp"
-#include "sdk/angelscript/source/as_generic.cpp"
-#include "sdk/angelscript/source/as_globalproperty.cpp"
-#include "sdk/angelscript/source/as_memory.cpp"
-#include "sdk/angelscript/source/as_module.cpp"
-#include "sdk/angelscript/source/as_objecttype.cpp"
-#include "sdk/angelscript/source/as_outputbuffer.cpp"
-#include "sdk/angelscript/source/as_parser.cpp"
-#include "sdk/angelscript/source/as_restore.cpp"
-#include "sdk/angelscript/source/as_scriptcode.cpp"
-#include "sdk/angelscript/source/as_scriptengine.cpp"
-#include "sdk/angelscript/source/as_scriptfunction.cpp"
-#include "sdk/angelscript/source/as_scriptnode.cpp"
-#include "sdk/angelscript/source/as_scriptobject.cpp"
-#include "sdk/angelscript/source/as_string_util.cpp"
-#include "sdk/angelscript/source/as_string.cpp"
-#include "sdk/angelscript/source/as_thread.cpp"
-#include "sdk/angelscript/source/as_tokenizer.cpp"
-#include "sdk/angelscript/source/as_typeinfo.cpp"
-#include "sdk/angelscript/source/as_variablescope.cpp"
+#ifdef ANGELSCRIPT_H_INCLUDED
+ /* When you add this cpp file to your project, you mustn't include it in a file where you've
+    already included any other headers - just put it inside a file on its own, possibly with your config
+    flags preceding it, but don't include anything else. That also includes avoiding any automatic prefix
+    header files that the compiler may be using.
+ */
+ #error "Incorrect use of JUCE cpp file"
+#endif
 
+#ifndef WIN32
 
-#include "sdk/add_on/contextmgr/contextmgr.cpp"
-#include "sdk/add_on/debugger/debugger.cpp"
-#include "sdk/add_on/scriptany/scriptany.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_atomic.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_builder.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_bytecode.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc_arm.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc_mips.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc_ppc_64.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc_ppc.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc_sh4.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc_x64_gcc.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc_x64_mingw.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc_x64_msvc.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc_x86.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc_xenon.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_callfunc.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_compiler.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_configgroup.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_context.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_datatype.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_gc.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_generic.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_globalproperty.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_memory.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_module.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_objecttype.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_outputbuffer.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_parser.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_restore.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_scriptcode.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_scriptengine.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_scriptfunction.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_scriptnode.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_scriptobject.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_string_util.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_string.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_thread.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_tokenizer.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_typeinfo.cpp"
+#include "angelscript-mirror/sdk/angelscript/source/as_variablescope.cpp"
 
+#include "angelscript-mirror/sdk/add_on/contextmgr/contextmgr.cpp"
+#include "angelscript-mirror/sdk/add_on/debugger/debugger.cpp"
+#include "angelscript-mirror/sdk/add_on/scriptany/scriptany.cpp"
+
+#if __clang__
 #pragma clang diagnostic ignored "-Wall"
- #include "sdk/add_on/scriptarray/scriptarray.cpp"
+#endif
+
+ #include "angelscript-mirror/sdk/add_on/scriptarray/scriptarray.cpp"
+
+#if __clang__
 #pragma clang diagnostic pop
+#endif
 
-#include "sdk/add_on/scriptbuilder/scriptbuilder.cpp"
-#include "sdk/add_on/scriptdictionary/scriptdictionary.cpp"
-#include "sdk/add_on/scriptfile/scriptfile.cpp"
-#include "sdk/add_on/scripthandle/scripthandle.cpp"
+#include "angelscript-mirror/sdk/add_on/scriptbuilder/scriptbuilder.cpp"
+#include "angelscript-mirror/sdk/add_on/scriptdictionary/scriptdictionary.cpp"
+#include "angelscript-mirror/sdk/add_on/scriptfile/scriptfile.cpp"
+#include "angelscript-mirror/sdk/add_on/scripthandle/scripthandle.cpp"
 
+#if __clang__
 #pragma clang diagnostic ignored "-Wall"
- #include "sdk/add_on/scripthelper/scripthelper.cpp"
+#endif
+
+ #include "angelscript-mirror/sdk/add_on/scripthelper/scripthelper.cpp"
+
+#if __clang__
 #pragma clang diagnostic pop
+#endif
 
-#include "sdk/add_on/scriptmath/scriptmath.cpp"
-#include "sdk/add_on/scriptmath/scriptmathcomplex.cpp"
-#include "sdk/add_on/scriptstdstring/scriptstdstring_utils.cpp"
+#include "angelscript-mirror/sdk/add_on/scriptmath/scriptmath.cpp"
+#include "angelscript-mirror/sdk/add_on/scriptmath/scriptmathcomplex.cpp"
+#include "angelscript-mirror/sdk/add_on/scriptstdstring/scriptstdstring_utils.cpp"
 
+#if __clang__
 #pragma clang diagnostic ignored "-Wall"
- #include "sdk/add_on/scriptstdstring/scriptstdstring.cpp"
-#pragma clang diagnostic pop
+#endif
 
-#include "sdk/add_on/serializer/serializer.cpp"
+ #include "angelscript-mirror/sdk/add_on/scriptstdstring/scriptstdstring.cpp"
+
+#if __clang__
+#pragma clang diagnostic pop
+#endif
+
+#include "angelscript-mirror/sdk/add_on/serializer/serializer.cpp"
+
+#endif
